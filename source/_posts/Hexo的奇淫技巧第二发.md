@@ -27,8 +27,142 @@ tags:
 
     `git init`
 
-- 设置远程仓库地址，并更新
+- 设置远程仓库地址
 
     `git remote add origin https://github.com/peishichao/Hexo.git`
 
-    `git pull origin master`
+如果报错：`fatal: remote origin already exists.`
+
+解决办法如下：`git remote rm origin`
+
+- Hexo源码提交
+
+		git add .
+			
+		git commit -m "添加hexo源码文件作为备份"
+			
+		git push origin master
+
+如果报错：`Permission denied (publickey).`
+
+解决方法如下：
+
+	ssh-agent
+
+    ssh-add ~/.ssh/id_key
+
+如果报错	`error:failed to push som refs to .......`
+
+解决方式如下：
+
+	git pull origin master
+	git push origin master
+
+- 完成
+
+经过上面的操作之后，本地的Hexo源码就已经上传到github服务器上进行备份了，就再也不用担心代码丢失找不到了(*^__^*) 嘻嘻……
+
+当远程仓库有更新的时候，执行下面代码就可将hexo源码放到本地了。
+
+	git pull origin master
+### 实现自动化操作 ###
+
+我说过我很懒..上面的操作远远不能达到我的心里预期，所以我还要实现自动化操作才可以咯。
+
+[Hexo的奇淫技巧第一发](http://www.steven7.top/2016/08/13/Hexo%E7%9A%84%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7%E7%AC%AC%E4%B8%80%E5%8F%91/#more)中我们已经提到了怎么在`Hexo`添加文章时自动打开编辑器了。原理是利用`nodeJs`的事件监听机制来实现监听Hexo的new事件来启动编辑器，完成自动启动编辑器的操作。
+
+那么可不可以通过通过监听Hexo的其它事件来完成自动执行Git命令完成自动备份呢？通过查阅Hexo文档，找到了Hexo的主要事件，见下表：
+
+| 事件名|    事件发生时间| 
+| :-------- | --------:| 
+| deployBefore| 在部署完成前发布| 
+| deployAfter|   在部署成功后发布 |  
+| exit|   在 Hexo 结束前发布 | 
+| generateBefore| 在静态文件生成前发布 | 
+| generateAfter|   在静态文件生成后发布 |  
+| new|    在文章文件建立后发布 | 
+
+所以我们就可以通过监听Hexo的deployAfter事件，待上传完成之后自动运行Git备份命令打到自动备份的目的。
+
+要实现这个自动备份功能，需要依赖`NodeJs`的一个`shelljs`模块,该模块重新包装了`child_process`,调用系统命令更加的方便。该模块需要安装后使用。
+
+	npm install --save shelljs
+
+操作步骤：
+
+1. 编写脚本，在`Hexo`根目录下的`scripts`（如果没有请新建）创建autoGItSave.js文件,文件名随意。
+2. 脚本内容如下：
+
+
+		require('child_process');
+		
+		try {
+		    hexo.on('deployAfter', function() {//当deploy完成后执行备份
+		        run();
+		    });
+		} catch (e) {
+		    console.log("产生了一个错误<(￣3￣)> !，错误详情为：" + e.toString());
+		}
+		
+		function run() {
+		    if (!which('git')) {
+		        echo('Sorry, this script requires git');
+		        exit(1);
+		    } else {
+		        echo("======================Auto Backup Begin===========================");
+		        cd('D:/Hexo');    //此处修改为Hexo根目录路径
+		        if (exec('git add --all').code !== 0) {
+		            echo('Error: Git add failed');
+		            exit(1);
+		
+		        }
+		        if (exec('git commit -am "Form auto backup script\'s commit"').code !== 0) {
+		            echo('Error: Git commit failed');
+		            exit(1);
+		
+		        }
+		        if (exec('git push origin master').code !== 0) {
+		//如果你的Git远程仓库名称不为origin的话，则修改成自己的远程仓库名和相应的分支名。
+		            echo('Error: Git push failed');
+		            exit(1);
+		
+		        }
+		        echo("==================Auto Backup Complete============================")
+		    }
+		}
+
+保存脚本并退出，然后执行`hexo deploy`命令，可以得到如下的类似结果：
+
+	
+	INFO  Deploying: git>
+	INFO  Clearing .deploy folder...
+	INFO  Copying files from public folder...
+	[master 3020788] Site updated: 2015-07-06 15:08:06
+	 5 files changed, 160 insertions(+), 58 deletions(-)
+	Branch master set up to track remote branch gh-pages from git@github.com:smilexi
+	amo/notes.git.
+	To git@github.com:smilexiamo/notes.git
+	   02adbe4..3020788  master -> gh-pages
+	On branch master
+	nothing to commit, working directory clean
+	Branch master set up to track remote branch gitcafe-pages from git@gitcafe.com:s
+	milexiamo/smilexiamo.git.
+	To git@gitcafe.com:smilexiamo/smilexiamo.git
+	   02adbe4..3020788  master -> gitcafe-pages
+	INFO  Deploy done: git
+	======================Auto Backup Begin===========================
+	[master f044360] Form auto backup script's commit
+	 2 files changed, 35 insertions(+), 2 deletions(-)
+	 rewrite db.json (100%)
+	To git@github.com:smilexiamo/hexo.git
+	   8f2b4b4..f044360  master -> master
+	==================Auto Backup Complete============================
+
+
+这样子，每次更新博文并`deploy`到服务器上之后，备份就自动启动并完成备份啦~是不是很方便呢？麻麻再也不用担心我们的博文找不到啦:-D
+
+Enjoy it！
+
+have a nice day!!
+
+蟹蟹O(∩_∩)O

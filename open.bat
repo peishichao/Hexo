@@ -1,1 +1,0 @@
-"C:\Program Files (x86)\MarkdownPad 2\MarkdownPad2.exe" "D:\Hexo\source\about.md"
