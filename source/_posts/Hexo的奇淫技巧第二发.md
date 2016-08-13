@@ -106,9 +106,7 @@ tags:
 		        }
 		     hexo.on('deployAfter', function() {
 		        run();
-		});e============================")
-				    }
-				}
+		});
 
 其中`D:/Hexo/GitUpdate.bat`内容如下：
 
