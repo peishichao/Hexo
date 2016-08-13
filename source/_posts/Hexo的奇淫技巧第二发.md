@@ -121,29 +121,14 @@ tags:
 保存脚本并退出，然后执行`hexo deploy`命令，可以得到如下的类似结果：
 
 	
-	INFO  Deploying: git>
-	INFO  Clearing .deploy folder...
-	INFO  Copying files from public folder...
-	[master 3020788] Site updated: 2015-07-06 15:08:06
-	 5 files changed, 160 insertions(+), 58 deletions(-)
-	Branch master set up to track remote branch gh-pages from git@github.com:smilexi
-	amo/notes.git.
-	To git@github.com:smilexiamo/notes.git
-	   02adbe4..3020788  master -> gh-pages
-	On branch master
-	nothing to commit, working directory clean
-	Branch master set up to track remote branch gitcafe-pages from git@gitcafe.com:s
-	milexiamo/smilexiamo.git.
-	To git@gitcafe.com:smilexiamo/smilexiamo.git
-	   02adbe4..3020788  master -> gitcafe-pages
-	INFO  Deploy done: git
-	======================Auto Backup Begin===========================
-	[master f044360] Form auto backup script's commit
-	 2 files changed, 35 insertions(+), 2 deletions(-)
-	 rewrite db.json (100%)
-	To git@github.com:smilexiamo/hexo.git
-	   8f2b4b4..f044360  master -> master
-	==================Auto Backup Complete============================
+		[master 4ae3ace] Site updated: 2016-08-14 00:05:25
+		 4 files changed, 44 insertions(+), 76 deletions(-)
+		Branch master set up to track remote branch master from https://github.com/peishichao/peishichao.github.io.git.
+		To https://github.com/peishichao/peishichao.github.io.git
+		   d781e56..4ae3ace  HEAD -> master
+		INFO  Deploy done: git
+		开始上传源代码
+		恭喜你更新Github成功
 
 
 这样子，每次更新博文并`deploy`到服务器上之后，备份就自动启动并完成备份啦~是不是很方便呢？麻麻再也不用担心我们的博文找不到啦:-D
