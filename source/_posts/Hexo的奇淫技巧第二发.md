@@ -94,42 +94,29 @@ tags:
 2. 脚本内容如下：
 
 
-		require('child_process');
-		
-		try {
-		    hexo.on('deployAfter', function() {//当deploy完成后执行备份
-		        run();
-		    });
-		} catch (e) {
-		    console.log("产生了一个错误<(￣3￣)> !，错误详情为：" + e.toString());
-		}
-		
+				var exe = require('child_process');
 		function run() {
-		    if (!which('git')) {
-		        echo('Sorry, this script requires git');
-		        exit(1);
-		    } else {
-		        echo("======================Auto Backup Begin===========================");
-		        cd('D:/Hexo');    //此处修改为Hexo根目录路径
-		        if (exec('git add --all').code !== 0) {
-		            echo('Error: Git add failed');
-		            exit(1);
-		
+		        console.log("开始上传源代码");
+		       if(exe.execFile('D:/Hexo/GitUpdate.bat').code !== 0){
+		        console.log("恭喜你更新Github成功");
+		       }
+		       if(exe.execFile('D:/Hexo/GitUpdate.bat').code == 0){
+		        console.log("更新Github失败");
+		       }
 		        }
-		        if (exec('git commit -am "Form auto backup script\'s commit"').code !== 0) {
-		            echo('Error: Git commit failed');
-		            exit(1);
-		
-		        }
-		        if (exec('git push origin master').code !== 0) {
-		//如果你的Git远程仓库名称不为origin的话，则修改成自己的远程仓库名和相应的分支名。
-		            echo('Error: Git push failed');
-		            exit(1);
-		
-		        }
-		        echo("==================Auto Backup Complete============================")
-		    }
-		}
+		     hexo.on('deployAfter', function() {
+		        run();
+		});e============================")
+				    }
+				}
+
+其中`D:/Hexo/GitUpdate.bat`内容如下：
+
+		git add --all
+		git commit -am "Form auto backup script\'s commit"
+		git push origin master
+
+请确保`GitUpdate.bat`文件位于Hexo的根目录下。
 
 保存脚本并退出，然后执行`hexo deploy`命令，可以得到如下的类似结果：
 
