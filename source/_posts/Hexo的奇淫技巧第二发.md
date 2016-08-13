@@ -1,6 +1,7 @@
 ---
 title: Hexo的奇淫技巧第二发：自动备份Hexo博客源文件
 date: 2016-08-13 21:27:34
+categories: 技术分享
 tags:
 - Hexo
 - 自动备份
