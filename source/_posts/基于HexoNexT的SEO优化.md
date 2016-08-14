@@ -109,7 +109,7 @@ npm install hexo-generator-baidu-sitemap --save
 - `NexT`主题内置的`SEO`优化工具
 
   ```xml
-  your=hexo-site\themes\next\_config.yml
+  your-hexo-site\themes\next\_config.yml
 
   line 22:
   cannoical: true
@@ -125,6 +125,42 @@ npm install hexo-generator-baidu-sitemap --save
 - 小技巧
 
   [为Hexo博客的每一篇文章自动追加版权信息](http://kuangqi.me/tricks/append-a-copyright-info-after-every-post/)
+
+  简要概括如下：
+
+  `your-hexo-site\scripts`中创建`AddDeclare.js`脚本文件（文件名随意）
+
+  ```xml
+  AddDeclare.js：
+  var fs = require('fs');
+  hexo.extend.filter.register('before_post_render', function(data){
+      if(data.copyright == false) return data;
+      var file_content = fs.readFileSync('tail.md');
+      if(file_content && data.content.length > 50) 
+      {
+          data.content += file_content;
+          var permalink = '\n本文永久链接：' + data.permalink;
+          data.content += permalink;
+      }
+      return data;
+  });
+
+  ```
+
+  `tail.md`为脚本信息文件，请诸君自己编写，将`tail.md`置于`Hexo`根目录下。
+
+  ```
+  tail.md:
+
+  版权声明
+
+  Steven`s Notes by Steven is licensed under a Creative Commons BY-NC-ND 4.0 International License.  
+
+  由裴士超创作并维护的斯蒂芬博客采用创作共用保留署名-非商业-禁止演绎4.0国际许可证。
+
+  本文首发于Steven`s Notes博客（ http://www.steven7.top ），版权所有，侵权必究。
+
+  ```
 
 最后聊一聊使用`Typora`的小感受吧：
 
