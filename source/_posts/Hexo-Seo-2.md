@@ -22,17 +22,17 @@ tags:
 
 - 首先想要被收录要提交你的网址给百度和谷歌
 
-​	（否则人家咋知道你的网址(ToT)/~~~）
+  ​（否则人家咋知道你的网址(ToT)/~~~）
 
-​	[百度引擎提交入口](http://www.baidu.com/search/url_submit.htm)
+  ​[百度引擎提交入口](http://www.baidu.com/search/url_submit.htm)
 
-​	[Google搜索引擎提交入口](https://www.google.com/webmasters/tools/home?hl=zh-CN)
+  ​[Google搜索引擎提交入口](https://www.google.com/webmasters/tools/home?hl=zh-CN)
 
 - 接下来最好大家注册一下度娘和谷哥的站长服务，以便于你更好的管理自己的网站
 
-​	[百度站长平台欢迎您](http://zhanzhang.baidu.com/)
+  ​[百度站长平台欢迎您](http://zhanzhang.baidu.com/)
 
-​	[谷歌站长平台欢迎您](https://www.google.com/webmasters/tools/home?hl=zh-CN)
+  ​[谷歌站长平台欢迎您](https://www.google.com/webmasters/tools/home?hl=zh-CN)
 
 #### 验证网站拥有权
 
@@ -122,6 +122,6 @@ tags:
 |               百度云加速之后无法访问                | 1.请在百度云加速中提交工单，请求百度专业人士解决2.[轻松设置百度云加速，让网站飞起来](http://www.ishuo.cn/show/1001052.html) |
 |              百度云加速之后蜘蛛无法抓取               | 因为刚更换`DNS`服务器，蜘蛛可能还没有反应过来，发射弧            |
 |               百度或谷歌长时间无法抓取               | 请切换`DNS`服务器                              |
-|          百度云加速之后会导致`Https`无妨访问           | 因为百度本身不支持，╮(╯▽╰)╭想用百度云加速木有办法啊啊啊！！除非把`DNS`切换回来 |
+|          百度云加速之后会导致`Https`无妨访问           | 因为百度云（免费版）本身不支持，╮(╯▽╰)╭想用百度云加速木有办法啊啊啊！！除非把`DNS`切换回来。==专业版是支持的哟 |
 | [百度链接提交主动推送后不收录的原因](http://tengj.top/2016/03/14/baidunoshouluresson/) | 所以希望大家还是主动推送和自动推送相结合                     |
 
