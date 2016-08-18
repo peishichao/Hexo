@@ -76,7 +76,8 @@ path: sitemap.xml
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git 
-  repo: http://github.com/peishichao/peishichao.github.io.git
+  repo: git@github.com:peishichao/peishichao.github.io.git
+  #repo: https://github.com/peishichao/peishichao.github.io.git
   branch: master
 
 # Avatar
