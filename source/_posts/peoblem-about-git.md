@@ -26,7 +26,7 @@ tags:
 
 - 应该使用管理员权限使用`git`
 
-	sudo git push
+  `sudo git push`
 
 - 确保您连接到正确的服务器地址
 
@@ -52,7 +52,7 @@ tags:
       $ ssh -T -p 443 git@ssh.github.com
       Hi username! You've successfully authenticated, but GitHub does not
       provide shell access.
-     
+
 
    如果测试成功，那太棒了。
 
@@ -122,36 +122,36 @@ tags:
 
    [`GitHub for Windows`](https://desktop.github.com/)是最好的选择。你可以用于`clone`资源库而不需要密钥。并且它可以使用`GIt Bash`工具。（`github`实力推广一波，不是我的锅啊）
 
-   如果你使用的是`Git Bash`工具，验证如下：
+  如果你使用的是`Git Bash`工具，验证如下：
 
       # start the ssh-agent in the background
       eval "$(ssh-agent -s)"
       Agent pid 59566
 
-如果你使用的是`git for windows`工具，验证如下：
+​	如果你使用的是`git for windows`工具，验证如下：
 
       # start the ssh-agent in the background
       eval $(ssh-agent -s)
       Agent pid 59566
-确保你拥有私钥并且已经加载到`SSH`中，验证如下：(`OpenSSH 6.7 or older`)
+​	确保你拥有私钥并且已经加载到`SSH`中，验证如下：(`OpenSSH 6.7 or older`)
 
       $ ssh-add -l
       2048 a0:dd:42:3c:5a:9d:e4:2a:21:52:4e:78:07:6e:c8:4d /Users/you/.ssh/id_rsa (RSA)
 
-`OpenSSH 6.8 or newer`
+​	`OpenSSH 6.8 or newer`
 
       $ ssh-add -l -E md5
       2048 MD5:a0:dd:42:3c:5a:9d:e4:2a:21:52:4e:78:07:6e:c8:4d /Users/you/.ssh/id_rsa (RSA)
 
-如果没有打印出相关信息，你需要去生成新的`SSH`钥匙。[请戳我](https://help.github.com/articles/generating-an-ssh-key/)
+​	如果没有打印出相关信息，你需要去生成新的`SSH`钥匙。[请戳我](https://help.github.com/articles/generating-an-ssh-key/)
 
-检查是否存在已经存在的`SSH`密钥。[戳我](https://help.github.com/articles/checking-for-existing-ssh-keys/)
+​	检查是否存在已经存在的`SSH`密钥。[戳我](https://help.github.com/articles/checking-for-existing-ssh-keys/)
 
-生成`SSH`密钥并添加至`ssh-agent`。 [戳我戳我](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+​	生成`SSH`密钥并添加至`ssh-agent`。 [戳我戳我](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
 
-添加新的密钥到你的`GitHub`账户。 [戳我戳我戳我](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
+​	添加新的密钥到你的`GitHub`账户。 [戳我戳我戳我](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
 
-上述情况翻译于`GitHub` 官网翻译文档
+​	上述情况翻译于`GitHub` 官网翻译文档
 
 #### `Hexo`主题相关问题解答：
 
