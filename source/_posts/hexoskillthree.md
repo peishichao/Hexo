@@ -9,7 +9,7 @@ tags:
 - 网站图标
 ---
 
-<img src="https://source.unsplash.com/random/1600x900">
+![](http://i4.buimg.com/567571/aecc6833cfb98a61.png)
 
 <!-- more -->
 
