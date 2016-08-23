@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>左家垅男子职业学校软件1201班蹭饭地图</title>
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+<script src="js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/lib/raphael-min.js"></script>
+<script type="text/javascript" src="js/res/chinaMapConfig.js"></script>
+<script type="text/javascript" src="js/map-min.js"></script>
+<style>
+    *{margin:0;padding:0;border: none;}
+    body { color: #333; text-align: center; font: 12px "楷体";background-color: #dcf5ed; }
+    .mapTipText{width: 300px;height: 100px;border-radius: 50%;background-color: #33ffff;}
+    .mapTipText .mapTipImg{height: 66px; width: 66px; float: left;border: 2px solid #ffffff; border-radius: 50%;overflow: hidden;margin: -12px 5px 0 -12px;}
+    .mapTipText .mapTipImg img{width: 100%;height: 100%;}
+    .mapTipText .mapTipList{float: left;margin-left: 4px;}
+    .mapTipText .mapTipList h2{text-align: left;}
+    .mapTipText .mapTipList h2 a{font-size: 24px; color: #262626;text-decoration:none;}
+    .mapTipText .mapTipList h2 a:hover{ color: #0085d2;}
+    .mapTipText .mapTipList h2 a span{font-size: 16px;margin-left: 3px;}
+    .mapTipText .mapTipList ul{ width: 203px;padding-right: 10px;}
+    .mapTipText .mapTipList ul li{list-style: none;float: left;padding: 7px 3px 0 3px;}
+    .mapTipText .mapTipList ul li a{color: #262626;text-decoration:none;}
+    .mapTipText .mapTipList ul li a:hover{background-color:#2ebcfe;color:#ffffff;}
+</style>
+<script type="text/javascript">
+   
+    $(function(){
+        $('#ChinaMap').SVGMap({
+            mapWidth: window.innerWidth/7*6,
+            mapHeight: window.innerHeight/6*5
+        });
+    });
+</script>
+</head>
+<body>
+<!--世界地图-->
+<script type="text/javascript" src="js/ammap.js"></script>
+<script type="text/javascript" src="js/continentsLow.js"></script>
+<script type="text/javascript" src="js/worldLow.js"></script>
+<div id="chartdiv"></div>
+<script src="js/index.js"></script>
+
+	<script src="js/d3.v3.min.js"></script>
+        <script src="js/trianglify.js"></script>
+        <script>
+        var t = new Trianglify();
+        window.onresize = function() {
+            redraw();
+        };
+
+        redraw();
+
+        function redraw() {
+            console.log("drawing "+document.body.clientWidth+"x"+height());
+            var pattern = t.generate(document.body.clientWidth, height());
+            document.body.setAttribute('style', 'background-image: '+pattern.dataUrl);
+            saveas.setAttribute('href', pattern.dataUri);
+            noise_display.innerHTML = t.options.noiseIntensity.toFixed(1);
+            cellsize_display.innerHTML = t.options.cellsize.toFixed(0);
+            cellpadding_display.innerHTML = t.options.cellpadding.toFixed(0);
+        }
+        function height() {
+            return Math.max(
+                document.body.scrollHeight*2, document.documentElement.scrollHeight*2,
+                document.body.offsetHeight*2, document.documentElement.offsetHeight*2,
+                document.body.clientHeight*2, document.documentElement.clientHeight*2
+            );
+        }
+
+        </script>
+<div class="wrap" style="margin-top: 50px;">
+
+
+<div class="itemCon" style="float: left">
+    <div id="ChinaMap" style="margin: 50px;"></div>
+    <div id="stateTip" style="position: absolute;left: 100%;text-align: left;display: inline;"></div>
+</div>
+
+<div id="mapTipContent" style="width: 900px;margin: 0 auto;display: none">
+    <div class="mapTipText mapTipText24">
+        <div class="mapTipImg"><img src="images/heilongjiang.jpg" alt=""/></div>
+        <div class="mapTipList">
+            <h2><a href=""><span>蹭饭蹭饭</span></a></h2>
+            <ul>
+                <li><a href="">裴士超</a></li>
+                <li><a href="">黄洋洋</a></li>
+                <li><a href="">任建龙</a></li>
+                <li><a href="">郑俊豪</a></li>
+                <li><a href="">喻合斌</a></li>
+                <li><a href="">刘烨</a></li>
+                <li><a href="">吴昊昊</a></li>
+                <li><a href="">聂冰伟</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="mapTipText mapTipText15">
+        <div class="mapTipImg"><img src="images/jilin.jpg" alt=""/></div>
+        <div class="mapTipList">
+            <h2><a href=""><span>蹭饭蹭饭</span></a></h2>
+            <ul>
+                <li><a href="">长沙-谢莹</a></li>
+                <li><a href="">长沙-雷佳烨</a></li>
+                <li><a href="">长沙-徐晓杰</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="mapTipText mapTipText21">
+        <div class="mapTipImg"><img src="images/liaoning.jpg" alt=""/></div>
+        <div class="mapTipList">
+            <h2><a href=""><span>蹭饭蹭饭</span></a></h2>
+            <ul>
+                <li><a href="">林夕</a></li>
+                <li><a href="">叶聪聪</a></li>
+                <li><a href="">张潮</a></li>
+            </ul>
+        </div>
+    </div>
+     <div class="mapTipText mapTipText6">
+        <div class="mapTipImg"><img src="images/liaoning.jpg" alt=""/></div>
+        <div class="mapTipList">
+            <h2><a href=""><span>蹭饭蹭饭</span></a></h2>
+            <ul>
+                <li><a href="">杭州-裴飞越</a></li>
+                <li><a href="">杭州-李想</a></li>
+                <li><a href="">杭州-崔杨</a></li>
+                <li><a href="">宁波-陈先珠</a></li>
+            </ul>
+        </div>
+    </div>  
+    <div class="mapTipText mapTipText30">
+        <div class="mapTipImg"><img src="images/liaoning.jpg" alt=""/></div>
+        <div class="mapTipList">
+            <h2><a href=""><span>蹭饭蹭饭</span></a></h2>
+            <ul>
+                <li><a href="">深圳-王博文</a></li>
+                <li><a href="">深圳-柳明</a></li>
+                <li><a href="">深圳-王碧波</a></li>
+                <li><a href="">东莞-覃忠</a></li>
+                <li><a href="">广州-矫丽颖</a></li>
+            </ul>
+        </div>
+    </div>
+     <div class="mapTipText mapTipText12">
+        <div class="mapTipImg"><img src="images/liaoning.jpg" alt=""/></div>
+        <div class="mapTipList">
+            <h2><a href=""><span>蹭饭蹭饭</span></a></h2>
+            <ul>
+                <li><a href="">武汉-王嘉诚</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="mapTipText mapTipText8">
+        <div class="mapTipImg"><img src="images/liaoning.jpg" alt=""/></div>
+        <div class="mapTipList">
+            <h2><a href=""><span>蹭饭蹭饭</span></a></h2>
+            <ul>
+                <li><a href="">郑州-苑潇潇</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
