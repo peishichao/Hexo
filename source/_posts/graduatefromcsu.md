@@ -13,7 +13,7 @@ tags:
 
 <!--more-->
 
- <blockquote class="blockquote-center">唯美食与旧识，不可辜负</blockquote>
+ <blockquote class="blockquote-center">唯美味与旧识，不可辜负</blockquote>
 
 毕业有段时间了，回想起毕业那段时间天天的喝酒聚餐，现在就有点小怀念了。
 
@@ -27,4 +27,4 @@ tags:
 
 这几日，随意翻了翻找了找，搞了一个毕业蹭饭地图。希望有用到的时候。
 
-[左家垅男子职业学校软件1201班蹭饭地图](http://peishichao.github.io/Whereyougo/index.html)
+[左家垅男子职业学校软件1201班蹭饭地图](https://github.com/peishichao/Hexo/Whereyougo/index.html)
