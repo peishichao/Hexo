@@ -27,4 +27,7 @@ tags:
 
 这几日，随意翻了翻找了找，搞了一个毕业蹭饭地图。希望有用到的时候。
 
-[左家垅男子职业学校软件1201班蹭饭地图](https://github.com/peishichao/Hexo/Whereyougo/index.html)
+[左家垅男子职业学校软件1201班蹭饭地图演示](http://www.steven7.top/software12-where/)
+
+[左家垅男子职业学校软件1201班蹭饭地图源码下载](http://www.steven7.top/software12-where/index.html)
+
