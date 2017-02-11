@@ -4,7 +4,7 @@ title: Favorite
 comment: true
 ---
 <blockquote class="blockquote-center">
-曾经的我是那么的深爱着他/她们
+追过的美剧
 </blockquote>
 
 ![](http://i2.buimg.com/567571/eedba2001d8b7c69.png)
