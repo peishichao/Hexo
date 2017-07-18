@@ -84,8 +84,6 @@ deploy:
 ## Docs:http://theme-next.iissnan.com/getting-started.html
 avatar: /uploads/avatar.png
 
-#commence
-duoshuo_shortname: steven7
 
 search:
   path: search.xml
